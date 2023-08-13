@@ -5,7 +5,7 @@ class DeviceInfo {
 
   String getDeviceType(BuildContext context) {
     if (MediaQuery.of(context).size.width >= isTablet) {
-      return 'tablet';
+      return 'Tablet';
     } else {
       return 'phone';
     }

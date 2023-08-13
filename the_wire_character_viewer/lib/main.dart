@@ -20,7 +20,6 @@ class TheWireCharacterViewerApp extends StatelessWidget {
       SystemChrome.setPreferredOrientations(
           [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     }
-
     return MaterialApp.router(
       routerConfig: _appRouter.config(),
     );
