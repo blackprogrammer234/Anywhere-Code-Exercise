@@ -15,13 +15,33 @@ abstract class _$NavigationRouteGenerator extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    DetailRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: DetailPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: HomePage(),
       );
-    }
+    },
   };
+}
+
+/// generated route for
+/// [DetailPage]
+class DetailRoute extends PageRouteInfo<void> {
+  const DetailRoute({List<PageRouteInfo>? children})
+      : super(
+          DetailRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'DetailRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

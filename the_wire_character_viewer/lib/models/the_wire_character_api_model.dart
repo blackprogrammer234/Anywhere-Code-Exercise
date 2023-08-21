@@ -30,7 +30,7 @@ class TheWireCharacterModel {
 
 class RelatedTopics {
   String? firstUrl;
-  Icon? icon;
+  CharacterIcon? icon;
   String? result;
   String? text;
 
@@ -38,7 +38,7 @@ class RelatedTopics {
 
   RelatedTopics.fromJson(Map<String, dynamic> json) {
     firstUrl = json['FirstURL'];
-    icon = json['Icon'] != null ? Icon.fromJson(json['Icon']) : null;
+    icon = json['Icon'] != null ? CharacterIcon.fromJson(json['Icon']) : null;
     result = json['Result'];
     text = json['Text'];
   }
@@ -53,14 +53,14 @@ class RelatedTopics {
   }
 }
 
-class Icon {
+class CharacterIcon {
   String? height;
   String? url;
   String? width;
 
-  Icon({this.height, this.url, this.width});
+  CharacterIcon({this.height, this.url, this.width});
 
-  Icon.fromJson(Map<String, dynamic> json) {
+  CharacterIcon.fromJson(Map<String, dynamic> json) {
     height = json['Height'];
     url = json['URL'];
     width = json['Width'];

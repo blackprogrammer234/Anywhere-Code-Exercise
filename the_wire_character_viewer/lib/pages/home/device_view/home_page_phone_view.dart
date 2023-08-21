@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_wire_character_viewer/bloc/the_wire_character_viewer_bloc.dart';
 import 'package:the_wire_character_viewer/bloc/the_wire_character_viewer_event.dart';
 import 'package:the_wire_character_viewer/bloc/the_wire_character_viewer_state.dart';
 import 'package:the_wire_character_viewer/models/the_wire_character_api_model.dart';
+import 'package:the_wire_character_viewer/pages/home/constant/home_page_constant.dart';
 import 'package:the_wire_character_viewer/pages/home/home_page_controller.dart';
+import 'package:the_wire_character_viewer/routes/navigation_route_generator.dart';
 import 'package:the_wire_character_viewer/usecases/the_wire_character_api_usecases.dart';
 
 class HomePagePhoneView extends StatefulWidget {
@@ -29,7 +32,10 @@ class _HomePagePhoneView extends State<HomePagePhoneView> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(title: Text("Sample App")),
+      appBar: AppBar(
+        title: const Text(HomePageConstant.Home_Title),
+        leading: const Icon(Icons.account_circle_rounded),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: BlocProvider(
@@ -57,13 +63,26 @@ class _HomePagePhoneView extends State<HomePagePhoneView> {
                   },
                   itemBuilder: ((context, index) {
                     return Container(
-                      height: 100,
-                      color: Colors.blue,
-                      child: Center(
-                        child: ListTile(
-                          title: Text(state
-                              .theWireCharacterModel.relatedTopices![index].text
-                              .toString()),
+                      child: PhysicalShape(
+                        color: Colors.white,
+                        elevation: 18,
+                        shadowColor: Colors.white,
+                        clipper: ShapeBorderClipper(
+                            shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        )),
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: ListTile(
+                            subtitle: Text(state.theWireCharacterModel
+                                .relatedTopices![index].text
+                                .toString()),
+                            trailing: IconButton(
+                              icon: Icon(Icons.more_vert),
+                              onPressed: () =>
+                                  context.router.push(DetailRoute()),
+                            ),
+                          ),
                         ),
                       ),
                     );
