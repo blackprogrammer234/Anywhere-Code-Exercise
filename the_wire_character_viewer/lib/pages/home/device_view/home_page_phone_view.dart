@@ -79,8 +79,7 @@ class _HomePagePhoneView extends State<HomePagePhoneView> {
                                 .toString()),
                             trailing: IconButton(
                               icon: Icon(Icons.more_vert),
-                              onPressed: () =>
-                                  context.router.push(DetailRoute()),
+                              onPressed: () => context.router.push(DetailRoute( data: state.theWireCharacterModel.relatedTopices![index])),
                             ),
                           ),
                         ),

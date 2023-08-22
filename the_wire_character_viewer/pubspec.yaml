@@ -37,6 +37,8 @@ dependencies:
   flutter_bloc: ^8.0.1
   equatable: ^2.0.0
   bloc: ^8.0.1
+  html: ^0.15.4
+  html_parser_plus: ^0.0.2
 
 dev_dependencies:
   flutter_test:

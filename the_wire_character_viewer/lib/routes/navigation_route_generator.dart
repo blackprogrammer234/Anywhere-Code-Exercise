@@ -1,6 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:the_wire_character_viewer/bloc/the_wire_character_viewer_bloc.dart';
+import 'package:the_wire_character_viewer/models/the_wire_character_api_model.dart';
 import 'package:the_wire_character_viewer/pages/detail_view/detail_page.dart';
 
 import '../pages/home/home_page.dart';
