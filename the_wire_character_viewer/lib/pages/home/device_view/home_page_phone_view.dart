@@ -44,7 +44,7 @@ class _HomePagePhoneView extends State<HomePagePhoneView> {
               listener: (context, state) {
             if (state is TheWireCharacterModelError) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text("Something wrong"),
+                content: Text(HomePageConstant.Error_Home),
               ));
             }
           }, child:
@@ -79,7 +79,9 @@ class _HomePagePhoneView extends State<HomePagePhoneView> {
                                 .toString()),
                             trailing: IconButton(
                               icon: Icon(Icons.more_vert),
-                              onPressed: () => context.router.push(DetailRoute( data: state.theWireCharacterModel.relatedTopices![index])),
+                              onPressed: () => context.router.push(DetailRoute(
+                                  data: state.theWireCharacterModel
+                                      .relatedTopices![index])),
                             ),
                           ),
                         ),
@@ -90,7 +92,7 @@ class _HomePagePhoneView extends State<HomePagePhoneView> {
                 );
               } else if (state is TheWireCharacterModelError) {
                 return Center(
-                  child: Text("Something went wrong"),
+                  child: Text(HomePageConstant.Error_Home),
                 );
               } else {
                 return Container();
